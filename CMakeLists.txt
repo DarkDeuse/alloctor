@@ -1,5 +1,13 @@
-cmake_minimum_required(VERSION 3.25) 
+cmake_minimum_required(VERSION 3.25)
+
+set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
+set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 project(allocator VERSION ${PROJECT_VERSION})
+
+
+configure_file(version.h.in version.h)
+include_directories(${CMAKE_BINARY_DIR})
+include_directories(${PROJECT_SOURCE_DIR})
 
 add_library(allocator_lib INTERFACE)
 set_target_properties(allocator_lib PROPERTIES
