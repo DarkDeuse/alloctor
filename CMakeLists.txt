@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25) 
-project(allocator)
+project(allocator VERSION ${PROJECT_VERSION})
 
 add_library(allocator_lib INTERFACE)
 set_target_properties(allocator_lib PROPERTIES
